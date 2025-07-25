@@ -1,259 +1,317 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
   <meta charset="UTF-8" />
-  <title>Моё био</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>Tbl_3a9k — Био</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-      color: white;
+      scroll-behavior: smooth;
     }
 
     body {
+      font-family: 'Press Start 2P', cursive;
+      background-color: black;
+      color: white;
+    }
+
+    .header {
+      background: url("images/IMBA.png") center/cover no-repeat;
       height: 100vh;
-      background: radial-gradient(#a23982, #1f1013);
-      overflow: hidden;
-      animation: fadeInBody 1s ease-out;
-    }
-
-    .overlay {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(5, 5, 15, 0.6);
-      z-index: 1;
-    }
-
-    .content {
-      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
       padding: 20px;
-      position: relative;
-      animation: fadeInUp 1.5s ease-out forwards;
-      opacity: 0;
     }
 
-    h1 {
-      font-size: 28px;
-      margin-bottom: 15px;
-      animation: fadeInText 2s ease-out forwards;
-      opacity: 0;
+    .header h1 {
+      font-size: 24px;
+      animation: fadeInDown 1.2s ease-out;
     }
 
-    .info {
-      margin-top: 30px;
-      font-size: 16px;
-      line-height: 1.6;
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 15px 20px;
-      border-radius: 12px;
-      display: inline-block;
-      text-align: left;
-      animation: fadeInText 2.5s ease-out forwards;
-      opacity: 0;
+    .header p {
+      font-size: 14px;
+      margin-top: 10px;
+      animation: fadeInUp 1.2s ease-out;
     }
 
-    .tiktok-button {
-      margin-top: 20px;
-      background-color: #000;
-      color: #fff;
-      padding: 10px 20px;
-      border: 2px solid white;
-      border-radius: 8px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: box-shadow 0.3s ease, transform 0.2s ease;
-      font-weight: 600;
-      animation: fadeInText 3s ease-out forwards;
-      opacity: 0;
-    }
-
-    .tiktok-button:hover {
-      box-shadow: 0 0 12px white;
-      transform: scale(1.05);
-    }
-
-    .tiktok-icon {
-      width: 20px;
-      height: 20px;
-    }
-
-    .light {
-      position: absolute;
-      width: 0px;
-      opacity: 0.75;
-      background-color: white;
-      box-shadow: #e9f1f1 0px 0px 20px 2px;
-      top: 100vh;
-      bottom: 0px;
-      left: 0px;
-      right: 0px;
-      margin: auto;
-      z-index: 0;
-    }
-
-    .x1 {
-      animation: floatUp 4s infinite linear;
-      transform: scale(1.0);
-    }
-
-    .x2 {
-      animation: floatUp 7s infinite linear;
-      transform: scale(1.6);
-      left: 15%;
-    }
-
-    .x3 {
-      animation: floatUp 2.5s infinite linear;
-      transform: scale(0.5);
-      left: -15%;
-    }
-
-    .x4 {
-      animation: floatUp 4.5s infinite linear;
-      transform: scale(1.2);
-      left: -34%;
-    }
-
-    .x5 {
-      animation: floatUp 8s infinite linear;
-      transform: scale(2.2);
-      left: -57%;
-    }
-
-    .x6 {
-      animation: floatUp 3s infinite linear;
-      transform: scale(0.8);
-      left: -81%;
-    }
-
-    .x7 {
-      animation: floatUp 5.3s infinite linear;
-      transform: scale(3.2);
-      left: 37%;
-    }
-
-    .x8 {
-      animation: floatUp 4.7s infinite linear;
-      transform: scale(1.7);
-      left: 62%;
-    }
-
-    .x9 {
-      animation: floatUp 4.1s infinite linear;
-      transform: scale(0.9);
-      left: 85%;
-    }
-
-    @keyframes floatUp {
-      0% {
-        top: 100vh;
-        opacity: 0;
-      }
-
-      25% {
-        opacity: 1;
-      }
-
-      50% {
-        top: 0vh;
-        opacity: 0.8;
-      }
-
-      75% {
-        opacity: 1;
-      }
-
-      100% {
-        top: -100vh;
-        opacity: 0;
-      }
-    }
-
-    @keyframes fadeInBody {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(40px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes fadeInText {
-      0% {
-        opacity: 0;
-      }
+    #particles-js {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      background: black;
+      z-index: 0;
+      overflow: hidden;
+    }
 
-      100% {
-        opacity: 1;
-      }
+    #particles-js canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    #particles-js .content {
+      position: relative;
+      z-index: 1;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    section.about, section.info, section.screenshots {
+      margin-bottom: 50px;
+    }
+
+    section.about p {
+      margin-top: 15px;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    section.info ul {
+      list-style: none;
+      font-size: 12px;
+      padding-left: 0;
+    }
+
+    section.info li {
+      margin-bottom: 10px;
+    }
+
+    .socials {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .socials a img {
+      width: 50px;
+      height: 50px;
+      border: 2px solid white;
+      padding: 5px;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .socials a img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px white;
+    }
+
+    /* Блок скриншотов */
+    .screenshots h2 {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .screenshots .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .screenshots img {
+      width: 300px;
+      height: auto;
+      border: 2px solid white;
+      border-radius: 10px;
+    }
+
+    /* Переключатель языков */
+    .lang-switcher {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+    }
+
+    .lang-switcher button {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 10px;
+      padding: 5px 10px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+
+    .lang-switcher button:hover {
+      background: white;
+      color: black;
     }
   </style>
 </head>
-
 <body>
-  <!-- Светящиеся палочки -->
-  <div class="light x1"></div>
-  <div class="light x2"></div>
-  <div class="light x3"></div>
-  <div class="light x4"></div>
-  <div class="light x5"></div>
-  <div class="light x6"></div>
-  <div class="light x7"></div>
-  <div class="light x8"></div>
-  <div class="light x9"></div>
 
-  <div class="overlay"></div>
-
-  <div class="content">
-    <h1>Наверное, я больше не смогу сказать "привет"<br>Кому-то, у кого глаза имеют карий цвет.</h1>
-    <div class="info">
-      🏳️ • Country: Kazakhstan <br>
-      👤 • I am 13 years old <br>
-      💬 • Discord username: tbl_3a9k <br>
-      ⛏️ • Playing only Minecraft <br>
-      🎮 • Playing on Dexland, FunTime, FunSky <br>
-      💫 • My dream: new PC <br>
-      💻 • My setup: GTX 1660 Ti, i5-10300H
-    </div>
-
-    <a class="tiktok-button" href="https://tiktok.com/@tbl_3a9k.tt" target="_blank" onclick="playSound()">
-      <img src="27b8c742-46a7-4314-9a59-386a092e39a1.png" alt="TikTok" class="tiktok-icon">
-      Перейти в TikTok
-    </a>
+  <!-- Переключатель языков -->
+  <div class="lang-switcher">
+    <button onclick="setLang('ru')">RU</button>
+    <button onclick="setLang('en')">EN</button>
   </div>
 
-  <!-- Звук фейерверка -->
-  <audio id="firework-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_1b5bd2b39c.mp3"></audio>
+  <!-- Верхняя часть -->
+  <div class="header">
+    <h1 id="title-text">Tbl_3a9k bio</h1>
+    <p id="subtitle-text">Trust me, I got nothing for you, other than love</p>
+  </div>
 
+  <!-- Нижняя часть с анимированным фоном -->
+  <div id="particles-js">
+    <div class="content">
+      <!-- Блок "Обо мне" -->
+      <section class="about">
+        <h2 id="about-title">Привет! Я Tbl_3a9k 👋</h2>
+        <p id="about-1">Мне 13 лет, я живу в Казахстане и обожаю играть в Minecraft. Особенно — в Bed Wars 🎮</p>
+        <p id="about-2">Моя мечта — собрать мощный ПК, но пока я кайфую со своей GTX 1660 Ti и i5-10300H 💻</p>
+        <p id="about-3">Люблю весело проводить время на Dexland, FunTime и FunSky.</p>
+        <p id="about-4">Добавляйся в Discord — <strong>tbl_3a9k</strong>. До встречи в игре!</p>
+      </section>
+
+      <!-- Блок "Инфо" -->
+      <section class="info">
+        <ul id="info-list">
+          <li>🏳️ • Country: Kazakhstan</li>
+          <li>👤 • I am 13 years old</li>
+          <li>💬 • Discord username: tbl_3a9k</li>
+          <li>⛏️ • Playing only Minecraft</li>
+          <li>🎮 • Playing on Dexland, FunTime, FunSky</li>
+          <li>💫 • My dream: new PC</li>
+          <li>💻 • My setup: GTX 1660 Ti, i5-10300H</li>
+        </ul>
+      </section>
+
+      <!-- Соцсети -->
+      <div class="socials">
+        <a href="https://tiktok.com/@tbl_3a9k.tt" target="_blank"><img src="images/tiktok.png" alt="TikTok"></a>
+        <a href="https://steamcommunity.com/profiles/76561199146062072/" target="_blank"><img src="images/steam.png" alt="Steam"></a>
+        <a href="https://www.twitch.tv/tbl_3a9ka" target="_blank"><img src="images/twitch.png" alt="Twitch"></a>
+        <a href="https://open.spotify.com/user/31zywyv4vpxmybv7sjz6gxf776ee" target="_blank"><img src="images/spotify.png" alt="Spotify"></a>
+        <a href="https://www.roblox.com/users/3276902015/profile?friendshipSourceType=PlayerSearch" target="_blank"><img src="images/roblox.png" alt="Roblox"></a>
+        <a href="https://funpay.com/users/your_fanpay_id" target="_blank"><img src="images/fanpay.png" alt="FanPay"></a>
+      </div>
+
+      <!-- Скриншоты -->
+      <section class="screenshots">
+        <h2>📸 Мои скриншоты</h2>
+        <div class="grid">
+          <img src="images/screenshot1.png" alt="Screenshot 1">
+          <img src="images/screenshot2.png" alt="Screenshot 2">
+          <img src="images/screenshot3.png" alt="Screenshot 3">
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
-    function playSound() {
-      const sound = document.getElementById("firework-sound");
-      sound.currentTime = 0;
-      sound.play();
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#ffffff",
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          out_mode: "out"
+        }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: true, mode: "push" },
+          resize: true
+        },
+        modes: {
+          grab: { distance: 140, line_linked: { opacity: 1 } },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+
+  <!-- Языки -->
+  <script>
+    const langData = {
+      ru: {
+        title: "Tbl_3a9k bio",
+        subtitle: "Trust me, I got nothing for you, other than love",
+        aboutTitle: "Привет! Я Tbl_3a9k 👋",
+        about1: "Мне 13 лет, я живу в Казахстане и обожаю играть в Minecraft. Особенно — в Bed Wars 🎮",
+        about2: "Моя мечта — собрать мощный ПК, но пока я кайфую со своей GTX 1660 Ti и i5-10300H 💻",
+        about3: "Люблю весело проводить время на Dexland, FunTime и FunSky.",
+        about4: "Добавляйся в Discord — <strong>tbl_3a9k</strong>. До встречи в игре!",
+        info: `
+          <li>🏳️ • Страна: Казахстан</li>
+          <li>👤 • Мне 13 лет</li>
+          <li>💬 • Discord: tbl_3a9k</li>
+          <li>⛏️ • Играю только в Minecraft</li>
+          <li>🎮 • Серверы: Dexland, FunTime, FunSky</li>
+          <li>💫 • Мечта: новый ПК</li>
+          <li>💻 • Мой сетап: GTX 1660 Ti, i5-10300H</li>`
+      },
+      en: {
+        title: "Tbl_3a9k bio",
+        subtitle: "Trust me, I got nothing for you, other than love",
+        aboutTitle: "Hey! I'm Tbl_3a9k 👋",
+        about1: "I'm 13 years old, I live in Kazakhstan and I love playing Minecraft, especially Bed Wars 🎮",
+        about2: "My dream is to build a powerful PC, but for now I'm enjoying my GTX 1660 Ti and i5-10300H 💻",
+        about3: "I have fun playing on Dexland, FunTime and FunSky.",
+        about4: "Add me on Discord — <strong>tbl_3a9k</strong>. See you in game!",
+        info: `
+          <li>🏳️ • Country: Kazakhstan</li>
+          <li>👤 • I am 13 years old</li>
+          <li>💬 • Discord username: tbl_3a9k</li>
+          <li>⛏️ • Playing only Minecraft</li>
+          <li>🎮 • Playing on Dexland, FunTime, FunSky</li>
+          <li>💫 • My dream: new PC</li>
+          <li>💻 • My setup: GTX 1660 Ti, i5-10300H</li>`
+      }
+    };
+
+    function setLang(lang) {
+      const data = langData[lang];
+      document.getElementById("title-text").innerText = data.title;
+      document.getElementById("subtitle-text").innerText = data.subtitle;
+      document.getElementById("about-title").innerText = data.aboutTitle;
+      document.getElementById("about-1").innerText = data.about1;
+      document.getElementById("about-2").innerText = data.about2;
+      document.getElementById("about-3").innerText = data.about3;
+      document.getElementById("about-4").innerHTML = data.about4;
+      document.getElementById("info-list").innerHTML = data.info;
     }
   </script>
 </body>
-
 </html>
